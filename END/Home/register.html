@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+	<title>培正快信用户注册</title>
+  <link href="../Public/css/bootstrap.min.css" rel="stylesheet" />
+  <link type="text/css" rel="stylesheet" href="../Public/css/register.css" />
+  <link rel="stylesheet" type="text/css" href="../Public/css/iconfont.css" />
+  <script type="text/javascript" src="../Public/js/register.js"></script>
+</head>
+<body>
+	<div id="header" style="background: url(img/logobg1.jpg);">
+	    <div id="logo">
+			<a href="#">
+				<img src="../Public/img/logoreg.png" href="login.html" alt="logo">
+			</a>	
+			</div>
+		</div>
+	<div id="container">
+		<div class="register">
+     <form action="register.php" method="post" name="myform" onsubmit="return checkForm()">
+    <!--用户名-->
+      <div class="item">
+        <span class="iconfont icon-yonghu1 label"><b style="color: red;">*</b>用户名</span>
+        <div class="input-info">
+          <input type="text" id="userName" class="inputs userWidth" name="uname" placeholder="请输入用户名" onfocus="userNameFocus()" onblur="userNameBlur()" />  
+        </div>
+        <div class="tips">
+          <div id="userNameId" style="float:left;"></div>
+        </div>        
+      </div>
+    <!--密码-->
+      <div class="item">
+        <span class="iconfont icon-mima label"><b style="color: red;">*</b>密&nbsp;&nbsp;&nbsp;&nbsp;码</span>
+        <div class="input-info">
+          <input type="password" id="pwd" class="inputs" name="password" placeholder="请输入密码" onfocus="pwdFocus()" onblur="pwdBlur()"/> 
+        </div>
+        <div class="tips">
+          <div id="pwdId" style="float:left;"></div>
+        </div>
+      </div>
+    <!--确认密码-->
+      <div class="item">
+        <span class="iconfont icon-mima label"><b style="color: red;">*</b>确认密码</span>
+        <div class="input-info">
+          <input type="password" id="repwd" class="inputs" placeholder="请再一次输入密码" name="repassword"  onblur="repwdBlur()"/>
+        </div>
+        <div class="tips">
+          <div id="repwdId" style="float: left"></div>
+        </div>
+      </div>  
+    <!--真实姓名-->
+      <div class="item">
+        <span class="iconfont icon-mingzi label"><b style="color: red;">*</b>真实姓名</span>
+        <div class="input-info">
+          <input type="text" id="realName" class="inputs" name="rname" placeholder="请输入真实姓名" onFocus="realNameFocus()"  onBlur="realNameBlur()"/> 
+        </div>
+        <div class="tips">
+          <div id="realNameId" style="float: left"></div>
+        </div>
+      </div>
+    <!--手机号码-->
+      <div class="item">
+        <span class="iconfont icon-shouji label"><b style="color: red;">*</b>手机号码</span>
+        <div class="input-info">
+          <input type="text" id="tel" class="inputs" name="phone" placeholder="请输入常用的手机号码"  onfocus="telFocus()" onblur="telBlur()" />
+        </div>
+        <div class="tips">
+          <div id="telId" style="float:left;"></div>
+        </div>
+      </div> 
+    <!--邮箱地址-->
+      <div class="item">
+        <span class="iconfont icon-email label"><b style="color: red;">*</b>邮箱地址</span>
+        <div class="input-info">
+          <input type="text" id="email" class="inputs" name="mail" placeholder="请输入邮箱地址" onfocus="emailFocus()" onblur="emailBlur()" /> 
+        </div>
+        <div class="tips">
+          <div id="emailId" style="float:left;"></div>
+        </div>
+      </div> 
+    <!--注册-->
+      <div class="item">
+        <span class="label">&nbsp;</span>
+        <div class="input-info">
+          <input type="submit" name="register" class="btn btn-blue" value="注册" />
+        </div>
+        <div class="tips">
+          已有账号？<a href="login.html">马上登陆</a>
+        </div>
+      </div>         
+      </div>     
+     </form>      
+		</div>
+	</div>
+
+	<div id="footer">
+    <div class="copy">
+      <span>Copyright &copy; 2017-2018广东培正学院敏敏童鞋</span>
+    </div>
+	</div>
+</body>
+</html>

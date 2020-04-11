@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+ <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="plugins/layui/css/layui.css" media="all"/>
+		<title></title>
+	<style type="text/css">
+			body {
+
+  width: 100%;
+  height: 100vh;
+
+  justify-content: center;
+  align-items: center;
+  background:  #acb6e5;
+}
+body .wrap {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform-style: preserve-3d;
+  transform: translateX(-50%) translateY(-50%) rotateX(20deg) rotateY(-20deg);
+  perspective: 10000px;
+  transition: 0.5s ease-in-out;
+  animation: flip2 6s linear infinite;
+}
+@keyframes flip2 {
+  0% {
+    transform: translateX(-50%) translateY(-50%) rotateX(20deg) rotateY(-20deg);
+  }
+  32.5% {
+    transform: translateX(-50%) translateY(-50%) rotateX(20deg) rotateY(-20deg);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-50%) rotateX(20deg) rotateY(-200deg);
+  }
+  42% {
+    transform: translateX(-50%) translateY(-50%) rotateX(20deg) rotateY(-210deg);
+  }
+  44% {
+    transform: translateX(-50%) translateY(-50%) rotateX(20deg) rotateY(-200deg);
+  }
+  82.5% {
+    transform: translateX(-50%) translateY(-50%) rotateX(20deg) rotateY(-200deg);
+  }
+  90% {
+    transform: translateX(-50%) translateY(-50%) rotateX(20deg) rotateY(-20deg);
+  }
+  92% {
+    transform: translateX(-50%) translateY(-50%) rotateX(20deg) rotateY(-10deg);
+  }
+  94% {
+    transform: translateX(-50%) translateY(-50%) rotateX(20deg) rotateY(-22deg);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) rotateX(20deg) rotateY(-20deg);
+  }
+}
+body .wrap .row {
+  width: 100%;
+  height: 50px;
+  display: inline-block;
+  float: left;
+  transform-style: preserve-3d;
+}
+body .wrap .row:nth-of-type(1) .cube {
+  animation-delay: -0.25s;
+  animation-delay: -0.125s;
+  animation-delay: -0.08333s;
+  animation-delay: -0.0625s;
+}
+body .wrap .row:nth-of-type(2) .cube {
+  animation-delay: -0.5s;
+  animation-delay: -0.25s;
+  animation-delay: -0.16667s;
+  animation-delay: -0.125s;
+}
+body .wrap .row:nth-of-type(3) .cube {
+  animation-delay: -0.75s;
+  animation-delay: -0.375s;
+  animation-delay: -0.25s;
+  animation-delay: -0.1875s;
+}
+body .wrap .row:nth-of-type(4) .cube {
+  animation-delay: -1s;
+  animation-delay: -0.5s;
+  animation-delay: -0.33333s;
+  animation-delay: -0.25s;
+}
+body .wrap .cube {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  transform-style: preserve-3d;
+  display: inline-block;
+  float: left;
+  animation: flip 3s ease-in-out infinite;
+}
+@keyframes flip {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: rotateX(180deg) rotateY(180deg) scale(0.5) translateZ(-25px);
+  }
+  65% {
+    transform: rotateX(180deg) rotateY(180deg);
+  }
+  100% {
+    transform: rotateX(180deg) rotateY(180deg);
+  }
+}
+body .wrap .cube .face {
+  margin: 0;
+  width: 50px;
+  height: 50px;
+  display: block;
+  position: absolute;
+  background: #fff;
+}
+body .wrap .cube .face:nth-of-type(1) {
+  transform: rotateY(0deg) translateZ(25px);
+}
+body .wrap .cube .face:nth-of-type(2) {
+  transform: rotateX(180deg) translateZ(25px);
+}
+body .wrap .cube .face:nth-of-type(3) {
+  transform: rotateY(90deg) translateZ(25px);
+  background: #eee;
+}
+body .wrap .cube .face:nth-of-type(4) {
+  transform: rotateY(-90deg) translateZ(25px);
+  background: #eee;
+}
+body .wrap .cube .face:nth-of-type(5) {
+  transform: rotateX(90deg) translateZ(25px);
+  background: #ddd;
+}
+body .wrap .cube .face:nth-of-type(6) {
+  transform: rotateX(-90deg) translateZ(25px);
+  background: #ddd;
+}
+		
+	</style>
+	</head>
+	<body>
+		<ul class="layui-nav layui-bg-black">
+			<img src="img/QQ图片20171030202112副本.png" class="layui-nav-img ">
+			<img src="img/1509366290_476555.png" style="height: 30px;">
+			  <li class="layui-nav-item" >
+    <a href="javascript:;"><img src="img/4.jpg" class="layui-nav-img ">我</a>
+    <dl class="layui-nav-child">
+      <dd><a href="javascript:;">修改密码</a></dd>
+      <dd><a href="javascript:;">安全管理</a></dd>
+      <dd><a href="javascript:;">注销</a></dd>
+    </dl>
+  </li>
+  <li class="layui-nav-item">
+  	
+    <a href="">短信</a>
+  </li>
+  <li class="layui-nav-item">
+    <a href="">邮件<span class="layui-badge-dot"></span></a>
+  </li>
+
+   <li class="layui-nav-item">
+    <a href="">帮助</a>
+  </li>
+</ul>
+<ul class="layui-nav layui-nav-tree layui-nav-side layui-bg-black" style="margin-top: 80px;border-radius:15px;margin-bottom: 20px;margin-right: 3px;">
+
+  <li class="layui-nav-item layui-nav-itemed">
+    <a href="javascript:;">系统信息管理</a>
+    <dl class="layui-nav-child">
+      <dd><a href="javascript:;">联系人管理</a></dd>
+      <dd><a href="javascript:;">信息记录管理</a></dd>
+     
+    </dl>
+
+  </li>
+
+ 
+  <li class="layui-nav-item"><a href="">联系人</a></li>
+      <div style=" -webkit-filter: blur(10px);  
+       -moz-filter: blur(10px);  
+        -ms-filter: blur(10px);      
+            filter: blur(10px); 
+            height: 80%;
+            opacity:0.5;
+         background-color:#999;
+         margin-top:-170px;
+            "
+            
+            ></div>
+</ul>
+<!--ul class="layui-nav layui-nav-tree layui-inline" lay-filter="demo" style="float:right;  margin-right: 10px;">
+  <li class="layui-nav-item layui-nav-itemed">
+    <a href="javascript:;">系统信息管理</a>
+    <dl class="layui-nav-child">
+      <dd><a href="javascript:;">联系人管理</a></dd>
+      <dd><a href="javascript:;">信息记录管理</a></dd>
+    
+    </dl>
+  </li>
+
+  <li class="layui-nav-item"><a href="">联系人</a></li>
+
+</ul-->
+	<div class="home-tips shadow">
+                    <i style="float:left;line-height:17px;" class="fa fa-volume-up">公告：</i>
+                    <div class="home-tips-container">
+                    	
+                    		 <span style="display: none;"><p>如果你觉得网站做得还不错，点个赞吧！</p>
+</span>
+                    	
+                    		 <span style="display: block;"><p>正在建设中！</p>
+</span>
+                    	
+
+                    	
+                    </div>
+                </div>
+	
+<div class="layui-main" style="margin-top: 100px;">
+	
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+  <legend >信息群发</legend>
+</fieldset>
+ 
+<form class="layui-form layui-form-pane" action="">
+
+  <div class="layui-form-item">
+    <div class="layui-inline">
+      <label class="layui-form-label">发送的号码</label>
+      <div class="layui-input-inline">
+        <input type="tel" name="phone" lay-verify="phone" autocomplete="off" class="layui-input">
+      </div>     
+    </div>
+   <a href="#"><i class="layui-icon" style="font-size: 20px;">&#xe61f;</i>   </a>
+</div>
+  <div class="layui-form-item layui-form-text" >
+
+    <label class="layui-form-label" style="width: 70%;">短信内容</label>
+    <div class="layui-input-block">
+      <textarea placeholder="请输入内容" class="layui-textarea" style="width: 70%;"></textarea>
+  
+    </div>
+  </div>
+
+ <div class="layui-form-item">
+    <div class="layui-inline">
+      <label class="layui-form-label">注册的号码</label>
+      <div class="layui-input-inline">
+        <input type="tel" name="phone" lay-verify="phone" autocomplete="off" class="layui-input">
+      </div>     
+    </div>
+</div>
+
+  <div class="layui-form-item">
+    <label class="layui-form-label">注册密码</label>
+    <div class="layui-input-inline">
+      <input type="password" name="password" placeholder="请输入密码" autocomplete="off" class="layui-input">
+    </div>
+    </div>
+
+ <div class="layui-form-item">
+   
+      <button class="layui-btn" lay-submit="" lay-filter="demo1">立即发送</button>
+      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+   
+  </div>
+</form>
+<div class="layui-carousel" id="test2" style="margin-top: 15px;">
+  <div carousel-item="">
+    <div>条目1</div>
+    <div>条目2</div>
+  </div>
+</div>
+	<div class='wrap'>
+  <div class='row'>
+    <div class='cube'>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+    </div>
+    <div class='cube'>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+    </div>
+    <div class='cube'>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+    </div>
+    <div class='cube'>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='cube'>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+    </div>
+    <div class='cube'>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+    </div>
+    <div class='cube'>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+    </div>
+    <div class='cube'>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='cube'>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+    </div>
+    <div class='cube'>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+    </div>
+    <div class='cube'>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+    </div>
+    <div class='cube'>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='cube'>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+    </div>
+    <div class='cube'>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+    </div>
+    <div class='cube'>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+    </div>
+    <div class='cube'>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+      <div class='face'></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script src="plugins/layui/layui.js" charset="UTF-8"></script>
+<script >
+
+	layui.use(['form', 'layedit', 'laydate','element'], function(){
+
+  var element = layui.element; 
+ var form = layui.form
+  ,layer = layui.layer
+  ,layedit = layui.layedit
+  ,laydate = layui.laydate;
+   var $ = layui.jquery;
+    $(function () {
+        //播放公告
+        playAnnouncement(3000);
+    });
+    function playAnnouncement(interval) {
+        var index = 0;
+        var $announcement = $('.home-tips-container>span');
+        //自动轮换
+        setInterval(function () {
+            index++;    //下标更新
+            if (index >= $announcement.length) {
+                index = 0;
+            }
+            $announcement.eq(index).stop(true, true).fadeIn().siblings('span').fadeOut();  //下标对应的图片显示，同辈元素隐藏
+        }, interval);
+    }
+  
+   
+  //日期
+  laydate.render({
+    elem: '#date'
+  });
+  laydate.render({
+    elem: '#date1'
+  });
+  
+  //创建一个编辑器
+  var editIndex = layedit.build('LAY_demo_editor');
+
+
+  
+  //监听提交
+  form.on('submit(demo1)', function(data){
+    layer.alert(JSON.stringify(data.field), {
+      title: '最终的提交信息'
+    })
+    return false;
+  });
+});
+
+</script>
+	</body>
+</html>

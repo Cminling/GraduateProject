@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax无刷新分页效果</title>
+    <script>
+    //制作函数（ajax去获得分页信息）
+    function showpage(url){
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function(){
+           if(xhr.readyState == 4){
+           //alert(xhr.responseText);
+           //把字符串的js信息变为实体（array/object)的js信息
+            eval("var jn_info = "+xhr.responseText);//[jn,jn,jn,jn,jn,jn,jn]
+var s="<table><tr><td>序号</td><td>名称</td><td>价格</td><td>数量</td><td>重量</td></tr>";
+            for(var i=0; i<jn_info.length-1; i++){
+                //把html标签和获得的数据信息拼装起来
+                s += "<tr>";
+                s += "<td>" + jn_info[i].x + "</td>";
+                s += "<td>" + jn_info[i].n+  "</td>";
+                s += "<td>" + jn_info[i].p + "</td>";
+                s += "<td>" + jn_info[i].u + "</td>";
+                s += "<td>" + jn_info[i].w+ "</td>";
+                s += "</tr>";
+            }
+            s += "<tr><td collapse='5'>"+jn_info[jn_info.length-1]+"</td></tr>";//页码列表
+            s += "</table>"
+            document.getElementById('result').innerHTML = s;
+           } 
+        }
+        xhr.open('get',url);
+        xhr.send(null);
+    }
+    window.onload = function(){
+        showpage('./data.php');
+    }
+    </script>
+    <style>
+        h2,div{width: 700px;margin: auto;}
+        h2{text-align: center;}
+        table{width:700px;margin:auto;border:1px solid black;border-collapse:collapse;}
+        td{border:1px solid black;}
+    </style>
+</head>
+<body>
+    <h2>Ajax无刷新分页效果</h2>
+    <div id="result"></div>
+
+</body>
+</html>

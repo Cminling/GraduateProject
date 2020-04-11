@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>培正快信-忘记密码</title>
+    <link rel="stylesheet" href="../Public/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../Public/plugins/layui/css/layui.css" type="text/css" />
+    <link rel="stylesheet" href="../Public/css/modify.css" type="text/css" />
+    <script type="text/javascript" src="../Public/js/jquery.js"></script>
+    <style>
+        body {
+            height:500px;
+            min-width: 1024px;
+            max-height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+	<ul class="layui-nav header layui-bg-black">
+		<img src="../Public/img/QQ图片20171030202112副本.png" class="layui-nav-img ">
+		<img src="../Public/img/1509366290_476555.png" style="height: 30px;">
+    </ul>   
+    <div class="bgforgot">
+        <p class="title">忘记密码</p>    
+        <form action="./Modify/checkCode.php" method="post" style="background-color: #eff0f8;">
+        <div class="inputcontent">
+            <div class="form-group">
+                <input type="text" name="rname" required="required" id="rname" class="j-rname" placeholder="请输入注册的真实姓名"/>
+            </div>          
+            <div class="form-group">
+                <input type="text" name="tel" id="tel_num" class="j-telphone" placeholder="请输入注册的手机号码" />
+                <span class="tel-msg"></span>
+            </div>
+            <div class="form-group">
+                <input type="text" name="vrify1" id="vrify1" placeholder="验证码" />
+                <input id="btnSendCode" type="button" class="code-btn" value="免费获取验证码" />
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" id="password" placeholder="请输入新密码" />
+            </div>
+            <div class="form-group">
+                <input type="password" name="repassword" id="repassword" placeholder="再一次输入新密码" />
+            </div>
+            <div class="js-help-info error"></div>
+            <div class="form-group" style="padding-left:87px">
+                <input type="submit" name="modify" id="modify" value="确认" />
+            </div>
+            </div>       
+        </form>
+    </div>
+    <footer style="background-color: #c3ddd4;">Copyright © 2017-2018广东培正学院敏敏童鞋</footer>
+    <script type="text/javascript" src="../Public/js/Modify.js"></script>
+    <script type="text/javascript" src="../Public/plugins/layui/layui.js"></script>
+    <script>
+    layui.use('element', function(){
+    var element = layui.element;
+    });
+    </script>
+</body>
+
+</html>

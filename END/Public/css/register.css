@@ -1,0 +1,181 @@
+@charset "utf8";
+/* CSS Document */
+
+div,form {padding:0;margin:0;}
+
+body{
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  background: #498aa6;
+}
+
+
+
+#header{
+  width:100%;
+  height: 72px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.nav{
+  height: 10px;
+}
+
+#logo{
+  display: block;
+  width: 700px;
+  margin: 0 auto;
+}
+
+img{
+  border: 0;
+  margin:10px auto 20px auto;
+  height: 42px;
+  float: left;
+
+}
+#container{
+  width:100%;
+  height: 532px;
+}
+
+.register{
+  width: 833px;
+  height: 480px;
+  margin: 0 auto;
+  padding: 30px 20px 20px 15px;
+  background:#F4F4F4;
+  /*阴影*/
+  -moz-box-shadow:-2px 4px 13px #333333;
+  -webkit-box-shadow:-2px 4px 13px #333333; 
+  box-shadow:-2px 4px 13px #333333;
+  /*圆角*/
+  -moz-border-radius:2em; 
+  -webkit-border-radius:2em; 
+  border-radius:2em;
+}
+
+  /*文本框*/
+  .inputs{
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    padding: 1px 0;
+    width:220px;
+    height:36px;
+  }
+   
+  /*文本框阴影*/ 
+  input:focus{
+    outline: 0;
+    border: 1px solid rgb(17, 187, 255);
+    box-shadow: 0px 0px 10px 0px rgb(17, 187, 255);
+  }
+
+  .userWidth{
+     width:220px
+    }
+ 
+  /*控制标签，文本框*/
+.item{
+    width: 838px;
+    height: 60px;
+    line-height:34px;
+    position: relative;
+    z-index:5;
+  }
+
+.item span{
+  background: none;
+}
+  /*用户名，密码等文字*/
+  .item .label{
+    width:200px;
+    text-align:right;    
+    font-size:18px;   
+    line-height:36px;    
+    color:#505050;
+    padding-right: 10px;   
+    overflow:hidden;
+    float: left;
+    height:38px; 
+    display:inline-block; 
+    padding:0 10px;
+    position:relative;   
+}
+
+   /*文本框的div*/
+  .item .input-info{
+    float: left;
+    width: 220px;
+    height: 38px;
+  }
+  .item .tips{
+    float:right;width: 388px;margin-top: 5px;
+  }
+  
+  .item .btn-blue{ 
+  font-size:18px; 
+  height:44px; 
+  line-height:44px; 
+  padding:0; width:220px;
+  }
+  .btn-blue{ 
+    background-color:#1997d7;
+    border-color:#1997d7;
+    color:#fff;
+  }
+  .btn-blue:hover,.btn-blue:active:hover,.btn-blue:focus{
+    background-color:#188dc8;
+    border-color:#127db3;
+    color:#fff;
+  }
+
+/*当鼠标放到文本框时，提示文本的样式*/
+.import_prompt{
+    /*border:solid 1px #ffcd00;
+    background-color:#ffffda;*/
+    color: #8D8989;
+    padding-left:5px;
+    padding-right:5px;
+    line-height:20px;
+    margin: 6px;
+    text-align: left;
+    }
+/*当文本框内容不符合要求时，提示文本的样式*/
+.error_prompt{
+    /*border:solid 1px #ff3300;
+    background-color:#fff2e5;*/
+    color: red;
+    background-image:url(../img/error-icon.png);
+    background-repeat:no-repeat;
+    background-position:5px 2px;
+    padding:2px 5px 0px 25px;
+    line-height:20px;
+    margin: 2px;
+    }
+/*当文本框内容输入正确时，提示文本的样式*/
+.ok_prompt{
+    /*border:solid 1px #01be00;
+    background-color:#e6fee4;*/
+    height: 24px;
+    background-image:url(../img/success-icon.png);
+    background-repeat:no-repeat;
+    background-position:5px 2px;
+    padding:2px 5px 2px 25px;
+    line-height:20px;
+    margin: 2px;
+    }
+
+#footer{
+  width: 838px;
+  margin:0 auto;
+}
+
+.copy{
+  text-align: center;
+  color: #285b70;
+  margin-bottom: 15px;
+}
+ 

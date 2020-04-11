@@ -1,0 +1,168 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  <script src="../Public/js/jquery.js" type="text/javascript"></script>  
+  <link rel="stylesheet" href="../Public/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="../Public/plugins/layui/css/layui.css"  media="all"/>  
+  <link rel="stylesheet" href="../Public/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../Public/css/signin.css"  />
+  <link rel="stylesheet" type="text/css" href="../Public/css/iview.css"  />
+  <script src="../Public/js/jquery.js"></script>
+  <script src="../Public/layer/layer.js"></script>
+  <title>登录</title>
+</head>
+
+<body style="overflow:auto;">
+  <ul class="layui-nav layui-bg-black">
+    <img src="../Public/../Public/img/QQ图片20171030202112副本.png" class="layui-nav-img ">
+    <img src="../Public/img/1509366290_476555.png" style="height: 30px;">
+    <li class="layui-nav-item" >
+      <a href="http://www.peizheng.com.cn/">广东培正学院官网</a>
+    </li>
+    <li class="layui-nav-item">
+    
+      <a href="http://qg.peizheng.net.cn/">广东培正学院教务系统</a>
+    </li>
+    <li class="layui-nav-item">
+      <a href="http://www.peizheng.cn/">培正梦飞翔</a>
+    </li>
+
+    <li class="layui-nav-item">
+      <div id="help"><a href="javascript:;">帮助</a></div>
+    </li>
+  </ul>
+    <div id="page">   
+      <dl class="admin_login" style="z-index: 6666; position: relative;">
+        <dt>
+          <strong>登陆</strong>
+            <em>Login</em>
+        </dt>
+        <form name="loginform" id="loginform" class="layui-form" action="login.php" method="post">
+          <div class="layui-form-item">
+            <dd class="user_icon">
+              <input type="text" name="userName" placeholder="账号" class="login_txtbx" id="userName" value=""/>
+            </dd>
+          </div>
+
+          <dd class="pwd_icon">
+            <input type="password" name="passWord" placeholder="密码" class="login_txtbx" id="passWord"/>
+          </dd>
+<!--
+          <dd class="val_icon">
+            <input type="text" name="chkCode" placeholder="验证码" class="login_txtbx" style="width:50%" id="chkCode"/>
+            <img src="code.php" title="点击刷新验证码" onClick="this.src='code.php?'+Math.random()">
+          </dd>
+-->
+          <div class="layui-form-item">
+            <input type="checkbox" id="remenber" name="remenber" title="记住登录" >
+          </div>
+
+          <dd>
+            <input type="submit" value="立即登陆" name="login" class="submit_btn" id="sumbit" />
+          </dd>
+          <dd>
+            <p><a href="./register.html" style="float: left;">还没有账号?</a></p>
+            <p><a href="./Forgot.html" style="float: right;">忘记密码?</a></p>
+          </dd>
+        </form>
+      </dl>
+      <div class="container" style="margin-top: -90px;">
+        <div class="scene">
+          <div class="webpack-cube">
+            <div class="outer-cube">
+              <div class="face face-top"></div>
+              <div class="face face-bottom"></div>
+              <div class="face face-left"></div>
+              <div class="face face-right"></div>
+              <div class="face face-front"></div>
+              <div class="face face-back"></div>
+            </div>
+            <div class="inner-cube">
+              <div class="face face-top"></div>
+              <div class="face face-bottom"></div>
+              <div class="face face-left"></div>
+              <div class="face face-right"></div>
+              <div class="face face-front"></div>
+              <div class="face face-back"></div>
+            </div>
+          </div>
+          <div class="shadows-outer-container">
+            <div class="shadow-outer"></div>
+          </div>
+          <div class="shadows-inner-container">
+            <div class="shadow-inner"></div>
+          </div>
+        </div>
+      </div>
+<script src="../Public/js/activate-power-mode.js" charset="utf-8"></script>
+<script src="../Public/plugins/layui/layui.js" charset="utf-8"></script>
+<script type="text/javascript">
+POWERMODE.colorful = true; // ture 为启用礼花特效 
+POWERMODE.shake = false; // false 为禁用震动特效
+document.body.addEventListener('input', POWERMODE);
+jQuery.fn.shake = function (intShakes /*Amount of shakes*/, intDistance /*Shake distance*/, intDuration /*Time duration*/) {
+    this.each(function () {
+        var jqNode = $(this);
+        jqNode.css({ position: 'relative' });
+        for (var x = 1; x <= intShakes; x++) {
+            jqNode.animate({ left: (intDistance * -1) }, (((intDuration / intShakes) / 4)))
+            .animate({ left: intDistance }, ((intDuration / intShakes) / 2))
+            .animate({ left: 0 }, (((intDuration / intShakes) / 4)));
+        }
+    });
+    return this;
+}
+  $('#help').on('click', function () {
+    layer.open({
+      type: 1,
+      title: ['帮助', 'font-size: 18px;padding-left: 50px;'],
+      content: '<div style="padding: 20px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">欢迎使用培正快信系统，在这里您可以发送短信和邮件，谢谢你的支持 ^_^</div>',
+      area: '250px;',
+      shade: 0.8,
+      btn: '朕已阅',
+    });
+  }); 
+  layui.use('form', function () {
+    var form = layui.form();
+  });
+  $(".submit_btn").click(function () {
+    var user = document.getElementById("userName").value;
+    var pass = document.getElementById("passWord").value;
+    var sumbit = document.getElementById("sumbit").value;
+    if (user == "") {
+      user.placeholder = "请输入账号";
+      $(".user_icon").shake(2, 10, 400);
+      return false;
+    }
+    if (pass == "") {
+      user.placeholder = "请输入密码";
+      $(".pwd_icon").shake(2, 10, 400);
+      return false;
+    }
+  });
+  function remenber() {
+    var remenber = document.getElementById("remenber");
+    if (remenber.checked != true)
+      remenber.checked = true;
+    else
+      remenber.checked = false;
+  }
+
+  var userName;
+  userName = getCookie("userName");
+  var form = document.getElementById("loginform")
+  var submit = document.getElementById("sumbit")
+  if (userName != null && userName != "") {
+    alert(userName);
+    var userName = document.getElementById("userName");
+    var passWord = document.getElementById("passWord");
+
+    document.loginform.submit();
+  }</script>
+</div>
+</body>
+</html>
